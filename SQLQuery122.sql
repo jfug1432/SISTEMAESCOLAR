@@ -1,0 +1,1 @@
+﻿insert into TBLCARRERAS (ID,NOMBRE) values (5, 'BIOLOGIA')
