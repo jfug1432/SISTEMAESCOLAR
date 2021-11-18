@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace SISTEMAESCOLAR.CLASES
 {
-    class CLCARRERAS
+    internal class CLMATERIAS
     {
         private Byte id;
         private String nombre;
         private Boolean estatus;
         // Grabar y Modificar
-        public CLCARRERAS(byte iD, string nombre, bool estatus)
+        public CLMATERIAS(byte iD, string nombre, bool estatus)
         {
             id = iD;
             this.nombre = nombre;
@@ -20,33 +20,33 @@ namespace SISTEMAESCOLAR.CLASES
         }
         // Consultar individualmente
 
-        public CLCARRERAS(byte iDs)
+        public CLMATERIAS(byte iDs)
         {
             id = iDs;
         }
-        public CLCARRERAS()
+        public CLMATERIAS()
         {
-           
+
         }
         public string GRABAR()
         {
-            return (" insert into TBLCARRERAS (ID,NOMBRE) values ('" + this.id + "','" + this.nombre + "')");
+            return (" insert into TBLMATERIAS (ID,NOMBRE) values ('" + this.id + "','" + this.nombre + "')");
         }
         public string CONSULTARI()
         {
-            return (" SELECT * FROM  TBLCARRERAS WHERE ID= '" + this.id + "'");
+            return (" SELECT * FROM  TBLMATERIAS WHERE ID= '" + this.id + "'");
         }
         public string ELIMINAR()
         {
-            return (" delete from TBLCARRERAS WHERE id= '" + this.id + "'");
+            return (" delete from TBLMATERIAS WHERE id= '" + this.id + "'");
         }
         public string modificar()
         {
-            return (" update TBLCARRERAS set  NOMBRE ='" + this.nombre + "' WHERE id= '" + this.id + "'");
+            return (" update TBLMATERIAS set  NOMBRE ='" + this.nombre + "' WHERE id= '" + this.id + "'");
         }
         public string consultageneral()
         {
-            return (" SELECT id as CLAVE,NOMBRE as NOMBRE FROM  TBLCARRERAS");
+            return (" SELECT id as CLAVE,NOMBRE as NOMBRE FROM  TBLMATERIAS");
         }
 
     }

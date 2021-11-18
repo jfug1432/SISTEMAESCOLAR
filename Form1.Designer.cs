@@ -31,10 +31,11 @@ namespace SISTEMAESCOLAR
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cATALOGOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cARRERASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mOVIMIENTOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lIBRERIASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cARRERASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mATERIASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,10 +55,18 @@ namespace SISTEMAESCOLAR
             // cATALOGOSToolStripMenuItem
             // 
             this.cATALOGOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cARRERASToolStripMenuItem});
+            this.cARRERASToolStripMenuItem,
+            this.mATERIASToolStripMenuItem});
             this.cATALOGOSToolStripMenuItem.Name = "cATALOGOSToolStripMenuItem";
             this.cATALOGOSToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.cATALOGOSToolStripMenuItem.Text = "CATALOGOS";
+            // 
+            // cARRERASToolStripMenuItem
+            // 
+            this.cARRERASToolStripMenuItem.Name = "cARRERASToolStripMenuItem";
+            this.cARRERASToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cARRERASToolStripMenuItem.Text = "CARRERAS";
+            this.cARRERASToolStripMenuItem.Click += new System.EventHandler(this.cARRERASToolStripMenuItem_Click);
             // 
             // mOVIMIENTOSToolStripMenuItem
             // 
@@ -77,12 +86,12 @@ namespace SISTEMAESCOLAR
             this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.sALIRToolStripMenuItem.Text = "SALIR";
             // 
-            // cARRERASToolStripMenuItem
+            // mATERIASToolStripMenuItem
             // 
-            this.cARRERASToolStripMenuItem.Name = "cARRERASToolStripMenuItem";
-            this.cARRERASToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cARRERASToolStripMenuItem.Text = "CARRERAS";
-            this.cARRERASToolStripMenuItem.Click += new System.EventHandler(this.cARRERASToolStripMenuItem_Click);
+            this.mATERIASToolStripMenuItem.Name = "mATERIASToolStripMenuItem";
+            this.mATERIASToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mATERIASToolStripMenuItem.Text = "MATERIAS";
+            this.mATERIASToolStripMenuItem.Click += new System.EventHandler(this.mATERIASToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -108,6 +117,7 @@ namespace SISTEMAESCOLAR
         private System.Windows.Forms.ToolStripMenuItem mOVIMIENTOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lIBRERIASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mATERIASToolStripMenuItem;
     }
 }
 

@@ -22,5 +22,11 @@ namespace SISTEMAESCOLAR
             FORMULARIOS.FRMCARRERAS X = new FORMULARIOS.FRMCARRERAS();
             X.Show();
         }
+
+        private void mATERIASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FORMULARIOS.FRMMATERIAS X = new FORMULARIOS.FRMMATERIAS();
+            X.Show();
+        }
     }
 }

@@ -56,11 +56,18 @@
     <Compile Include="CLASES\CLCARRERAS.cs" />
     <Compile Include="CLASES\clconexion.cs" />
     <Compile Include="CLASES\clglobal.cs" />
+    <Compile Include="CLASES\CLMATERIAS.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRMMATERIAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRMMATERIAS.Designer.cs">
+      <DependentUpon>FRMMATERIAS.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMULARIOS\FRMCARRERAS.cs">
       <SubType>Form</SubType>
@@ -78,6 +85,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRMMATERIAS.resx">
+      <DependentUpon>FRMMATERIAS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMULARIOS\FRMCARRERAS.resx">
       <DependentUpon>FRMCARRERAS.cs</DependentUpon>
@@ -110,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LIBRERIAS\" />
+    <Folder Include="REPORTES\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Capturazoom.PNG" />

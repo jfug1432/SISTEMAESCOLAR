@@ -4,9 +4,9 @@ using System.Data;
 
 namespace SISTEMAESCOLAR.FORMULARIOS
 {
-    public partial class FRMCARRERAS : Form
+    public partial class FRMMATERIAS : Form
     {
-        public FRMCARRERAS()
+        public FRMMATERIAS()
         {
             InitializeComponent();
         }
@@ -15,21 +15,21 @@ namespace SISTEMAESCOLAR.FORMULARIOS
         {
             DataSet ds = new DataSet();
 
-            CLASES.CLCARRERAS consultar = new CLASES.CLCARRERAS(byte.Parse(txtid.Text));
+            CLASES.CLMATERIAS consultar = new CLASES.CLMATERIAS(byte.Parse(txtid.Text));
             CLASES.clconexion conexion = new CLASES.clconexion(consultar.CONSULTARI());
             ds = conexion.consultar();
             if (ds.Tables[0].Rows.Count > 0)
             {
                 // MODIFICAR
                 // txtnombre.Text = ds.Tables["Tabla"].Rows[0]["NOMBRE"].ToString();
-                CLASES.CLCARRERAS MODIFICARCARRERA = new CLASES.CLCARRERAS(Convert.ToByte(txtid.Text), txtnombre.Text, true);
+                CLASES.CLMATERIAS MODIFICARCARRERA = new CLASES.CLMATERIAS(Convert.ToByte(txtid.Text), txtnombre.Text, true);
                 conexion = new CLASES.clconexion(MODIFICARCARRERA.modificar());
                 conexion.EJECUTAR();
             }
             else
             {
                 //  MessageBox.Show("Lo siento, dato no encontrado");
-                CLASES.CLCARRERAS GRABARCARRERA = new CLASES.CLCARRERAS(Convert.ToByte(txtid.Text), txtnombre.Text, true);
+                CLASES.CLMATERIAS GRABARCARRERA = new CLASES.CLMATERIAS(Convert.ToByte(txtid.Text), txtnombre.Text, true);
                 conexion = new CLASES.clconexion(GRABARCARRERA.GRABAR());
                 conexion.EJECUTAR();
             }
@@ -52,7 +52,7 @@ namespace SISTEMAESCOLAR.FORMULARIOS
         {
             try
             {
-                CLASES.CLCARRERAS G = new CLASES.CLCARRERAS();
+                CLASES.CLMATERIAS G = new CLASES.CLMATERIAS();
                 CLASES.clconexion con = new CLASES.clconexion();
                 if (con.Execute(G.consultageneral(), 0) == true)
                 {
@@ -72,7 +72,7 @@ namespace SISTEMAESCOLAR.FORMULARIOS
         {
             DataSet ds = new DataSet();
 
-            CLASES.CLCARRERAS consultar = new CLASES.CLCARRERAS(byte.Parse(txtid.Text));
+            CLASES.CLMATERIAS consultar = new CLASES.CLMATERIAS(byte.Parse(txtid.Text));
             CLASES.clconexion conexion = new CLASES.clconexion(consultar.CONSULTARI());
             ds = conexion.consultar();
             if (ds.Tables[0].Rows.Count > 0)
@@ -87,14 +87,14 @@ namespace SISTEMAESCOLAR.FORMULARIOS
         {
             DataSet ds = new DataSet();
 
-            CLASES.CLCARRERAS consultar = new CLASES.CLCARRERAS(byte.Parse(txtid.Text));
+            CLASES.CLMATERIAS consultar = new CLASES.CLMATERIAS(byte.Parse(txtid.Text));
             CLASES.clconexion conexion = new CLASES.clconexion(consultar.CONSULTARI());
             ds = conexion.consultar();
             if (ds.Tables[0].Rows.Count > 0)
             {
                 // DAR DE BAJA
                 // txtnombre.Text = ds.Tables["Tabla"].Rows[0]["NOMBRE"].ToString();
-                CLASES.CLCARRERAS borrarCARRERA = new CLASES.CLCARRERAS(Convert.ToByte(txtid.Text), txtnombre.Text, true);
+                CLASES.CLMATERIAS borrarCARRERA = new CLASES.CLMATERIAS(Convert.ToByte(txtid.Text), txtnombre.Text, true);
                 conexion = new CLASES.clconexion(borrarCARRERA.ELIMINAR());
                 conexion.EJECUTAR();
             }
