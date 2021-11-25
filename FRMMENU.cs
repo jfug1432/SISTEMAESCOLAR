@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SISTEMAESCOLAR
 {
-    public partial class Form1 : Form
+    public partial class FRMMENU : Form
     {
-        public Form1()
+        public FRMMENU()
         {
             InitializeComponent();
         }
@@ -26,6 +26,18 @@ namespace SISTEMAESCOLAR
         private void mATERIASToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FORMULARIOS.FRMMATERIAS X = new FORMULARIOS.FRMMATERIAS();
+            X.Show();
+        }
+
+        private void gRUPOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FORMULARIOS.FRMGRUPOS X = new FORMULARIOS.FRMGRUPOS();
+            X.Show();
+        }
+
+        private void aLUMNOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FORMULARIOS.FRMALUMNOS X = new FORMULARIOS.FRMALUMNOS();
             X.Show();
         }
     }

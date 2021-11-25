@@ -13,25 +13,32 @@ namespace SISTEMAESCOLAR.FORMULARIOS
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-
-            CLASES.CLMATERIAS consultar = new CLASES.CLMATERIAS(byte.Parse(txtid.Text));
-            CLASES.clconexion conexion = new CLASES.clconexion(consultar.CONSULTARI());
-            ds = conexion.consultar();
-            if (ds.Tables[0].Rows.Count > 0)
+            if (int.Parse(txtid.Text) > 0 && int.Parse(txtid.Text) < 255)
             {
-                // MODIFICAR
-                // txtnombre.Text = ds.Tables["Tabla"].Rows[0]["NOMBRE"].ToString();
-                CLASES.CLMATERIAS MODIFICARCARRERA = new CLASES.CLMATERIAS(Convert.ToByte(txtid.Text), txtnombre.Text, true);
-                conexion = new CLASES.clconexion(MODIFICARCARRERA.modificar());
-                conexion.EJECUTAR();
+                DataSet ds = new DataSet();
+
+                CLASES.CLMATERIAS consultar = new CLASES.CLMATERIAS(byte.Parse(txtid.Text));
+                CLASES.clconexion conexion = new CLASES.clconexion(consultar.CONSULTARI());
+                ds = conexion.consultar();
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    // MODIFICAR
+                    // txtnombre.Text = ds.Tables["Tabla"].Rows[0]["NOMBRE"].ToString();
+                    CLASES.CLMATERIAS MODIFICARCARRERA = new CLASES.CLMATERIAS(Convert.ToByte(txtid.Text), txtnombre.Text, true);
+                    conexion = new CLASES.clconexion(MODIFICARCARRERA.modificar());
+                    conexion.EJECUTAR();
+                }
+                else
+                {
+                    //  MessageBox.Show("Lo siento, dato no encontrado");
+                    CLASES.CLMATERIAS GRABARCARRERA = new CLASES.CLMATERIAS(Convert.ToByte(txtid.Text), txtnombre.Text, true);
+                    conexion = new CLASES.clconexion(GRABARCARRERA.GRABAR());
+                    conexion.EJECUTAR();
+                }
             }
             else
             {
-                //  MessageBox.Show("Lo siento, dato no encontrado");
-                CLASES.CLMATERIAS GRABARCARRERA = new CLASES.CLMATERIAS(Convert.ToByte(txtid.Text), txtnombre.Text, true);
-                conexion = new CLASES.clconexion(GRABARCARRERA.GRABAR());
-                conexion.EJECUTAR();
+                MessageBox.Show("Valores permitidos entre 0-255");
             }
         }
 
